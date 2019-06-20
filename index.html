@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        body{
+            height: 90vh;
+            background: url(bg.jpg);
+        }
+        .image-tag-wrapper{
+            margin: 0 auto;
+            width: 150px;
+            background: #ffffff;
+            -webkit-box-shadow: 1px 1px 8px 0px rgba(241,239,239,1);
+            -moz-box-shadow: 1px 1px 8px 0px rgba(241,239,239,1);
+            box-shadow: 0px 0px 5px 0px rgba(241,239,239,1);
+        }
+        .action{
+            position: relative;
+            width: 10px;
+            color: #FF5722;
+            text-align: center;
+            height: 21px;
+            border: 1px solid #f1efef;
+            border-radius: 50%;
+            padding: 2px 7px;
+            right: -10px;
+            float: right;
+            top: -10px;
+            background: #fbf8f8;
+            cursor: pointer;
+            /* -webkit-box-shadow: 1px 1px 8px 0px rgba(241,239,239,1); */
+            -moz-box-shadow: 1px 1px 8px 0px rgba(241,239,239,1);
+            box-shadow: 0px 0px 5px 0px rgba(241,239,239,1);
+            z-index: 1;
+        }
+        /* Style the tab */
+        .tab {
+            overflow: hidden;
+            background: #f5f5f5;
+            width: 100%;
+            position: relative;
+            top: -27px;
+            border-bottom: 1px solid #f1f1f1;
+        }
+
+        /* Style the buttons inside the tab */
+        .tab button {
+            background-color: inherit;
+            float: left;
+            border: none;
+            outline: none;
+            cursor: pointer;
+            transition: 0.3s;
+            font-size: 16px;
+            width: 33.33%;
+            height: 45px;
+        }
+        .tab button{
+            border-right: 1px solid #FF5722;
+        }
+        .tab button:last-child{
+            border-right: 0 solid #FF5722;
+        }
+        /* Change background color of buttons on hover */
+        .tab button:hover {
+            background-color: #ddd;
+        }
+
+        /* Create an active/current tablink class */
+        .tab button.active {
+            background-color: #FF5722;
+            color: #ffffff;
+        }
+
+        /* Style the tab content */
+        .tabcontent {
+            display: none;
+            padding: 6px 12px;
+        }
+
+
+        .tag-form-group {
+            margin-bottom: 15px;
+        }
+        .tag-form-group>.tag-form-control{
+            width: 97%;
+            border: 1px solid #e4e4e4;
+        }
+        .tag-form-group>.tag-form-control.tag-input{
+            height: 30px;
+        }
+        .tag-form-group>.tag-input-label{
+            margin-bottom: 5px;
+            color: #ff5722;
+        }
+        .tag-form-action {
+            text-align: right;
+            margin-bottom: 5px;
+        }
+        .form-btn {
+            width: 50%;
+            padding: 7px 0;
+            border: 1px solid #ff5722;
+            color: #ffffff;
+            background: #fb784e;
+            cursor: pointer;
+            box-shadow: inset 0 0 0 0 #ff5722;
+            -webkit-transition: ease-out 0.4s;
+            -moz-transition: ease-out 0.4s;
+            transition: ease-out 0.4s;
+        }
+        .form-btn:hover {
+            color: #ffffff;
+            background: #000000;
+            border: 1px solid #ff5722;
+            transition: 2s ease;
+            box-shadow: inset 0 0 0 50px #ff5722;
+        }
+        .image-tag-view-body{
+            min-height: 30px;
+            padding: 15px 5px 10px;
+        }
+        .product-title{
+            color: #FF5722;
+            font-size: 20px;
+        }
+        a.product-link{
+            width: 70%;
+            padding: 5px 0;
+            border: 1px solid #ff5722;
+            color: #ffffff;
+            background: #fb784e;
+            cursor: pointer;
+            box-shadow: inset 0 0 0 0 #ff5722;
+            -webkit-transition: ease-out 0.4s;
+            -moz-transition: ease-out 0.4s;
+            transition: ease-out 0.4s;
+            display: block;
+            text-align: center;
+            text-decoration: none;
+            margin: 10px auto 0;
+        }
+        a.product-link:hover{
+            color: #ffffff;
+            background: #000000;
+            border: 1px solid #ff5722;
+            transition: 2s ease;
+            box-shadow: inset 100px 0 0 0 #ff5722;
+        }
+
+
+        .circle-ripple {
+            background-color: #35ffc3;
+            width: 25px;
+            height: 25px;
+            border-radius: 50%;
+            animation: ripple 0.7s linear infinite;
+            cursor: pointer;
+        }
+
+        .circle-ripple>i {
+            font-size: 14px;
+            position: relative;
+            top: 4px;
+            left: 6px;
+        }
+
+        @keyframes ripple {
+            0% {
+                box-shadow: 0 0 0 0 rgba(101, 255, 120, 0.3),
+                0 0 0 1px rgba(101, 255, 120, 0.3);
+            }
+            100% {
+                box-shadow: 0 0 0 1em rgba(101, 255, 120, 0.3),
+                0 0 0 15px rgba(101, 255, 120, 0.3);
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="circle-ripple"><i class="fa fa-comments"></i></div>
+<div class="circle-ripple"><i class="fa fa-link"></i></div>
+<div class="circle-ripple"><i class="fa fa-cart-plus"></i></div>
+
+    <div class="image-tag-wrapper">
+        <div id="image2form3">
+            <div class="action">
+                <span class="hide-image-tag">x</span>
+            </div>
+            <div class="image-tag-view-body">
+                <div class="product-title">Lorem Ipsum</div>
+                <div class="product-description"><b>Rs.130</b></div>
+                <a href="" class="product-link">Checkout</a>
+            </div>
+        </div>
+    </div>
+    <br>
+    <div class="image-tag-wrapper">
+        <div id="image2form2">
+            <div class="action">
+                <span class="hide-image-tag">x</span>
+            </div>
+            <div class="image-tag-view-body">
+                <div class="product-title">Lorem Ipsum</div>
+                <div class="product-description">Lorem ipsum, or lipsum as it is sometimes known,</div>
+                <a href="https://www.google.com/" class="product-link" target="_blank">View</a>
+            </div>
+        </div>
+    </div>
+    <br>
+    <div class="image-tag-wrapper">
+        <div id="image2form">
+            <div class="action">
+                <span class="hide-image-tag">x</span>
+            </div>
+            <div class="image-tag-view-body">
+                Lorem ipsum, or lipsum as it is sometimes known,
+            </div>
+        </div>
+    </div>
+
+    <script src="http://code.jquery.com/jquery-1.8.3.min.js "></script>
+    <script>
+        $(document).ready(function(){
+            $('#tab_comments').css("display", "block");
+            $('.tab-comments').addClass('active');
+        });
+        function openCity(evt, cityName) {
+            var i, tabcontent, tablinks;
+            tabcontent = document.getElementsByClassName("tabcontent");
+            for (i = 0; i < tabcontent.length; i++) {
+                tabcontent[i].style.display = "none";
+            }
+            tablinks = document.getElementsByClassName("tablinks");
+            for (i = 0; i < tablinks.length; i++) {
+                tablinks[i].className = tablinks[i].className.replace(" active", "");
+            }
+            document.getElementById(cityName).style.display = "block";
+            evt.currentTarget.className += " active";
+        }
+    </script>
+</body>
+</html>
